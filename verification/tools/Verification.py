@@ -7,9 +7,9 @@ def hash_id(id):
     return hashlib.sha256(salt.encode() + id.encode()).hexdigest() + ':' + salt
 
 
-def check_id(hashed_password, user_password):
-    password, salt = hashed_password.split(':')
-    return password == hashlib.sha256(salt.encode() + user_password.encode()).hexdigest()
+def check_id(hashed_id, entered_id):
+    password, salt = hashed_id.split(':')
+    return password == hashlib.sha256(salt.encode() + entered_id.encode()).hexdigest()
 
 
 """
