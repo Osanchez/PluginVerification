@@ -19,5 +19,5 @@ from django.urls import path
 
 # url patterns will take a hash key and return a hash key as a response to verify with plugin
 urlpatterns = [
-    path('', views.home, name='verification-response'),
+    path('', views.verification, name='verification-response'),
 ]
