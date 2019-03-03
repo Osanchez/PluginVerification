@@ -12,6 +12,7 @@ def check_id(hashed_password, user_password):
     return password == hashlib.sha256(salt.encode() + user_password.encode()).hexdigest()
 
 
+"""
 new_pass = input('Please enter a password: ')
 hashed_password = hash_id(new_pass)
 
@@ -22,3 +23,5 @@ if check_id(hashed_password, old_pass):
     print('Correct Hashkey')
 else:
     print('Incorrect Hashkey')
+"""
+
