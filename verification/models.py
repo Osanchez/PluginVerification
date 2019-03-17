@@ -8,18 +8,12 @@ from django.utils import timezone
 
 
 class Authentication(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    authentic_key = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    owner = models.CharField(max_length=100, default='')
     plugin_name = models.CharField(max_length=100)
     date_purchased = models.DateTimeField(default=timezone.now)
-    authentic_key = models.UUIDField(default=uuid.uuid4, editable=False)
+    black_listed = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.user.__str__()
+        return self.authentic_key.__str__()
 
-
-class Blacklist(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    date_added = models.DateTimeField(default=timezone.now)
-
-    def __str__(self):
-        return self.user.__str__()

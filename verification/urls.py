@@ -13,11 +13,11 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from . import views
 
+from . import views
 from django.urls import path
 
 # url patterns will take a hash key and return a hash key as a response to verify with plugin
 urlpatterns = [
-    path('', views.verification, name='verification-response'),
+    path('<uuid:uuid4>', views.verification, name='verification-response'),
 ]
