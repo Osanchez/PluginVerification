@@ -2,4 +2,16 @@
 
 {% block content %}
     <h1>Store</h1>
+    {% for plugin in plugins %}
+        <article class="media content-section">
+            <div class="media-body">
+                <div class="article-metadata">
+                    <a class="mr-2" href="#">{{ plugin.author }}</a>
+                    <small class="text-muted">{{ plugin.date_posted|date:"F d, Y" }}</small>
+                </div>
+                <h2><a class="article-title" href="#">{{ plugin.title }}</a></h2>
+                <p class="article-content">{{ plugin.description }}</p>
+            </div>
+        </article>
+    {% endfor %}
 {% endblock content %}
