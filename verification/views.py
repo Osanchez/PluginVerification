@@ -30,6 +30,3 @@ def verification(request, uuid4):
 
     return JsonResponse(data)
 
-
-def home(request):
-    return render(request, 'PluginVerification/home.html')
