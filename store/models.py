@@ -6,6 +6,16 @@ from django.utils import timezone
 # Create your models here.
 
 
+class Post(models.Model):
+    title = models.CharField(max_length=255, default='')
+    author = models.CharField(max_length=100, default='')
+    content = models.TextField()
+    date_posted = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return self.title.__str__()
+
+
 class Plugin(models.Model):
     plugin_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     title = models.CharField(max_length=255, default='')
@@ -16,4 +26,6 @@ class Plugin(models.Model):
 
     def __str__(self):
         return self.title.__str__()
+
+
 
