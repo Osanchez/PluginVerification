@@ -1,5 +1,5 @@
 # PluginVerification
-AIO site for selling Minecraft plugins, integrated anti-piracy verification server for plugins, community forumn 
+AIO site for selling Minecraft plugins, integrated anti-piracy verification server for plugins, Community forumn 
 
 # The Issue
 Many developers face a big issue when developing paid software. This major issue is piracy. Many upcoming developers that I know spend hundreds of hours
